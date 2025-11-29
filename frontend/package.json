@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://brianjeong727.github.io/personal-website",
+  "homepage": "https://brianjeong727.github.io/PersonalPortfolio",
   "dependencies": {
     "@pixi/filter-glitch": "^5.1.1",
     "@pixi/filter-rgb-split": "^5.1.1",
