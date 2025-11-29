@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/PersonalPortfolio/static/css/main.56f8cced.css",
+    "main.js": "/PersonalPortfolio/static/js/main.b4e7d1ac.js",
+    "static/js/453.d7446e4a.chunk.js": "/PersonalPortfolio/static/js/453.d7446e4a.chunk.js",
+    "static/media/iGradeUImg.png": "/PersonalPortfolio/static/media/iGradeUImg.39b7d6fcf9a548a8dab0.png",
+    "static/media/Headshot.png": "/PersonalPortfolio/static/media/Headshot.53e35e29abc57d2ab400.png",
+    "static/media/churchAppImg.png": "/PersonalPortfolio/static/media/churchAppImg.34d98488a19d8c79bf39.png",
+    "index.html": "/PersonalPortfolio/index.html",
+    "main.56f8cced.css.map": "/PersonalPortfolio/static/css/main.56f8cced.css.map",
+    "main.b4e7d1ac.js.map": "/PersonalPortfolio/static/js/main.b4e7d1ac.js.map",
+    "453.d7446e4a.chunk.js.map": "/PersonalPortfolio/static/js/453.d7446e4a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56f8cced.css",
+    "static/js/main.b4e7d1ac.js"
+  ]
+}
