@@ -1,0 +1,37 @@
+<svg width="400" height="400" viewBox="0 0 400 400"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <defs>
+    <!-- Bold noise texture -->
+    <feTurbulence type="turbulence" baseFrequency="0.9" numOctaves="3" seed="8" result="noise" />
+
+    <!-- Medium-scale displacements for glitch shape -->
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="45" result="glitch" />
+
+    <!-- Chromatic aberration layers -->
+    <filter id="rgbShift">
+      <feOffset dx="-3" dy="0" in="SourceGraphic" result="red" />
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 0 0 0 0
+        0 0 0 0 0
+        0 0 0 1 0" in="red" />
+
+      <feOffset dx="3" dy="0" in="SourceGraphic" result="blue" />
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0
+        0 0 0 0 0
+        0 0 1 0 0
+        0 0 0 1 0" in="blue" />
+
+      <feBlend mode="screen" in="red" in2="blue" />
+    </filter>
+
+    <radialGradient id="maskGrad">
+      <stop offset="50%" stop-color="white"/>
+      <stop offset="80%" stop-color="black"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="200" cy="200" r="200" fill="url(#maskGrad)" filter="url(#rgbShift)" />
+</svg>

@@ -1,3 +1,116 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Terminal Font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap');
+
+/* GLOBAL */
+body {
+  @apply bg-[#0a0a0f] text-gray-200 font-[JetBrains_Mono] tracking-wide;
+  overflow-x: hidden;
+}
+
+/* Noise texture (behind EVERYTHING) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.03;
+  z-index: -50 !important;
+}
+
+/* Subtle grid (less visible) */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(157, 78, 221, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(157, 78, 221, 0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* Soft spotlight */
+.spotlight {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 850px;
+  height: 850px;
+  background: radial-gradient(circle, rgba(157, 78, 221, 0.12), rgba(0,0,0,0));
+  filter: blur(55px);
+  pointer-events: none;
+  z-index: -100 !important;
+}
+
+/* SUBTLE neon glow */
+.neon {
+  text-shadow:
+    0 0 4px #9D4EDD,
+    0 0 10px #9D4EDD;
+}
+
+/* Terminal cursor blink */
+@keyframes blinkCursor {
+  0% { opacity: 1; }
+  49% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Typewriter keyframes */
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-start infinite;
+}
+
+
+/* ================================================
+   PIXEL TEAR GLITCH RING (visible glitch layer)
+   ================================================ */
+.pixel-glitch-ring {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0.85;
+  mix-blend-mode: screen;
+}
+
+/* RGB pixel tear burst */
+.pixel-glitch-ring::before,
+.pixel-glitch-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid #9D4EDD;
+  box-shadow: 
+    0 0 15px #9D4EDD,
+    0 0 30px #9D4EDD;
+
+  /* Jagged pixel edges */
+  clip-path: polygon(
+    0% 20%, 5% 15%, 10% 25%, 20% 18%, 25% 28%, 30% 20%,
+    35% 35%, 40% 28%, 50% 40%, 55% 25%, 60% 30%, 70% 20%,
+    80% 35%, 85% 25%, 90% 28%, 95% 20%, 100% 30%,
+    100% 70%, 95% 75%, 90% 65%, 85% 78%, 80% 65%, 75% 75%,
+    70% 60%, 65% 75%, 55% 65%, 50% 80%, 45% 70%, 40% 78%,
+    30% 60%, 25% 72%, 20% 60%, 10% 72%, 5% 70%, 0% 65%
+  );
+}
+
+
