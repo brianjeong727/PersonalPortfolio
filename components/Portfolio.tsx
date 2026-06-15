@@ -462,8 +462,7 @@ export default function Portfolio() {
           data-state={sceneState("landing", state)}
         >
           <div className="landing-inner">
-            <div className="watermark" aria-hidden="true">채움</div>
-            <div className="land-intro in">
+<div className="land-intro in">
               <div className="kicker">Brian Jeong · CS + Data Science · Pitt</div>
               <h1>
                 I solve problems for the communities I belong to — and I build the <em>whole thing.</em>
