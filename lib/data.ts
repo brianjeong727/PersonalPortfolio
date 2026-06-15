@@ -81,8 +81,8 @@ export const WORKS: Work[] = [
     name: "Prism",
     roman: ["i", "ii", "iii"],
     hint: "Real-time incident command",
-    status: { label: "Live link incoming", kind: "pending" },
-    link: { href: "#", label: "link incoming" },
+    status: { label: "Live", kind: "live" },
+    link: { href: "https://prism-ics.vercel.app/", label: "prism-ics.vercel.app" },
     mind: {
       title: "I reasoned backwards from a commander <em>under pressure.</em>",
       copy: "Emergency dispatch needs a live shared picture — where every unit is, what's depleted, what to send next — instantly. The decision that mattered most: let AI estimate, but <b>never let it become the truth.</b> The system stays the source of record; the model only advises.",
@@ -174,6 +174,7 @@ export const BODY: Record<string, BodySection> = {
     title: "Where my technical work runs in <em>production.</em>",
     items: [
       { role: "Software Engineering Intern — ML Ops", org: "PNC Financial Services", t: "Built a production inference pipeline for a home-equity model on AWS; cut a Debit Card Fraud model's runtime 60% via PySpark partitioning; ran batch inference for a Tier-1 XGBoost fraud model scoring 9M+ records per cycle." },
+      { role: "Design Engineer", org: "Chaeum · Seoul", t: "Designed and built the full site: Tower elevator navigation, bilingual KR/ENG typographic system, and a build-time WebP pipeline serving 24 portfolio pieces." },
     ],
   },
 };
