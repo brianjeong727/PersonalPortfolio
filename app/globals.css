@@ -108,7 +108,7 @@ em,.it{font-family:var(--serif);font-style:italic;font-weight:400}
 .node .ring{position:absolute;inset:0;border-radius:50%;border:1px solid var(--line);transition:border-color .5s,box-shadow .5s,transform .6s var(--ease-soft)}
 .node .gline{fill:none;stroke:var(--muted);stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;transition:stroke .5s}
 .node .gdot{fill:var(--muted);transition:fill .5s}
-.node .meta{text-align:center;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+.node .meta{text-align:center;opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s;display:flex;flex-direction:column;align-items:center}
 .node .pname{font-family:var(--serif);font-size:1.5rem;font-style:italic;letter-spacing:.01em;line-height:1}
 .node .phint{margin-top:7px;font-family:var(--mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .node .enter{margin-top:9px;font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);opacity:0;transition:opacity .5s}
