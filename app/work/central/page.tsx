@@ -48,8 +48,8 @@ const STEPS: Step[] = [
   {
     kicker: "Decision 03",
     title: "AI only where it gives hours back",
-    body: "Worship prep meant retyping chord charts into slides every week. Now a photo of the chart goes through OCR, and the Anthropic API structures the text into a slide deck.",
-    tradeoff: "[Brian: what you gave up, e.g. cost per run or a review step before slides go live]",
+    body: "Worship prep meant retyping lyrics from chord charts into slides every week. Now the leader uploads the chart PDF, Tesseract.js reads it in the browser, and the Anthropic API strips out chords and metadata and returns the lyrics by section, one slide each.",
+    tradeoff: "OCR runs on the leader's own device, so it costs nothing per run but is slow on an old phone. If OCR or the API call fails, that song falls back to a title slide instead of blocking the whole deck.",
     panel: 3,
   },
 ];
@@ -91,7 +91,7 @@ export default function CentralPage() {
         <h2>What broke</h2>
         <div className="body">
           <p>
-            <b>A write policy that forgot which ministry it was in.</b> While building event budgets, I found that
+            <b>A write policy that forgot which ministry it was in.</b>{" "}While building event budgets, I found that
             the write policies on event plans checked for a planning permission but never checked the ministry. A
             planner in one ministry could run an unfiltered update or delete and reach every ministry&apos;s plans.
           </p>
