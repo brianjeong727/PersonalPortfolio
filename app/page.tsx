@@ -93,9 +93,11 @@ export default function Home() {
             <span className="badge">In progress</span>
           </div>
           <p className="line">
-            Owning the engineering side of a research project in my lab at Pitt. Write-up to come as the work
-            takes shape.
+            Turning a clinical guideline for Alzheimer&rsquo;s evaluation into a multi-agent LLM workflow, tested on
+            ADNI patient data.
           </p>
+          <div className="stack">LangGraph · Python · scikit-learn · XGBoost</div>
+          <Link className="cta" href="/work/pittnail">See where it stands →</Link>
         </section>
       </main>
     </div>
