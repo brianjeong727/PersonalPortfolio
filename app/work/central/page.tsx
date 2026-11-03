@@ -78,7 +78,7 @@ export default function CentralPage() {
         <h2>The problem</h2>
         <div className="body">
           <p>
-            A 197-member campus ministry ran on four disconnected tools. Announcements lived in Messenger, files in
+            My own campus ministry, 197 members at the time, ran on four disconnected tools. Announcements lived in Messenger, files in
             Drive, sign-ups in forms, and worship sets in WorshipTools. As finance and operations director I was the
             one stitching them together every week, so I knew exactly where it broke.
           </p>
