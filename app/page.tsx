@@ -40,7 +40,7 @@ export default function Home() {
             <span className="badge">Live · 200+ weekly users</span>
           </div>
           <p className="line">
-            The operating system for a 197-member campus ministry. One app replaced Messenger, Drive, and
+            The operating system for campus ministries at Pitt and CMU. One app replaced Messenger, Drive, and
             WorshipTools, on the web, iOS, and Android.
           </p>
           <Link href="/work/central" aria-label="Open the Central case study">
