@@ -10,8 +10,16 @@ export const PROFILE = {
   ],
 };
 
-/** Looping recordings live in /public/recordings. Leave undefined to show a placeholder. */
-export const RECORDINGS: Record<string, string | undefined> = {
-  central: undefined,
-  chaeum: undefined,
+export interface Recording {
+  /** Short silent loop for the home page card. */
+  teaser: string;
+  /** The full edited reel for the case-study header. */
+  full: string;
+  poster: string;
+}
+
+/** Edited demo reels live in /public/recordings. Remove an entry to show a placeholder. */
+export const RECORDINGS: Record<string, Recording | undefined> = {
+  central: { teaser: "/recordings/central-teaser.mp4", full: "/recordings/central.mp4", poster: "/recordings/central.jpg" },
+  chaeum: { teaser: "/recordings/chaeum-teaser.mp4", full: "/recordings/chaeum.mp4", poster: "/recordings/chaeum.jpg" },
 };

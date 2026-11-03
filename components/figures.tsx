@@ -30,14 +30,14 @@ export function CentralArchitecture() {
 
 export function CentralPipeline() {
   return (
-    <svg className="diagram" viewBox="0 0 520 420" role="img" aria-label="A photo of a chord chart goes through Tesseract OCR, then the Anthropic API structures it into slides for Sunday.">
+    <svg className="diagram" viewBox="0 0 520 420" role="img" aria-label="A chord chart PDF goes through Tesseract OCR in the browser, then the Anthropic API extracts lyrics by section, which become slides for Sunday.">
       <rect x="160" y="30" width="200" height="56" rx="8" />
-      <text x="176" y="63">Photo of chord chart</text>
+      <text x="176" y="63">Chord chart PDF</text>
       <rect x="160" y="130" width="200" height="56" rx="8" />
-      <text x="176" y="155">OCR</text>
+      <text x="176" y="155">OCR, in the browser</text>
       <text className="s" x="176" y="173">Tesseract.js</text>
       <rect className="hl" x="160" y="230" width="200" height="56" rx="8" />
-      <text x="176" y="255">Structure + layout</text>
+      <text x="176" y="255">Lyrics by section</text>
       <text className="s" x="176" y="273">Anthropic API</text>
       <rect x="160" y="330" width="200" height="56" rx="8" />
       <text x="176" y="363">Slides for Sunday</text>

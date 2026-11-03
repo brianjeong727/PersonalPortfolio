@@ -45,7 +45,7 @@ export default function Home() {
           </p>
           <Link href="/work/central" aria-label="Open the Central case study">
             <ViewTransition name="shot-central" share="morph">
-              <Screen src={RECORDINGS.central} label="Central screen recording" />
+              <Screen src={RECORDINGS.central?.teaser} poster={RECORDINGS.central?.poster} label="Central screen recording" />
             </ViewTransition>
           </Link>
           <div className="stack">Next.js · Supabase · PostgreSQL · Capacitor · Anthropic API</div>
@@ -63,7 +63,7 @@ export default function Home() {
           </p>
           <Link href="/work/chaeum" aria-label="Open the Chaeum case study">
             <ViewTransition name="shot-chaeum" share="morph">
-              <Screen src={RECORDINGS.chaeum} label="Chaeum screen recording" />
+              <Screen src={RECORDINGS.chaeum?.teaser} poster={RECORDINGS.chaeum?.poster} label="Chaeum screen recording" />
             </ViewTransition>
           </Link>
           <div className="stack">Astro 5 · TypeScript · astro:assets</div>

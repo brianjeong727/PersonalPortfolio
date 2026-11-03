@@ -24,7 +24,12 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Brian Jeong · Software Engineer",
     template: "%s · Brian Jeong",
