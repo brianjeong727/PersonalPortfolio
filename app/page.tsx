@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ViewTransition } from "react";
+import BootName from "@/components/BootName";
 import Screen from "@/components/Screen";
 import SidebarIndex, { type IndexItem } from "@/components/Sidebar";
 import { PncPipeline } from "@/components/figures";
@@ -17,7 +18,7 @@ export default function Home() {
     <div className="shell">
       <aside className="side">
         <div>
-          <h1>{PROFILE.name}</h1>
+          <BootName name={PROFILE.name} />
           <div className="role">{PROFILE.role}</div>
           <p className="bio">{PROFILE.bio}</p>
           <SidebarIndex items={INDEX} />
@@ -43,11 +44,16 @@ export default function Home() {
             The operating system for campus ministries at Pitt and CMU. One app replaced Messenger, Drive, and
             WorshipTools, on the web, iOS, and Android.
           </p>
-          <Link href="/work/central" aria-label="Open the Central case study">
-            <ViewTransition name="shot-central" share="morph">
-              <Screen src={RECORDINGS.central?.teaser} poster={RECORDINGS.central?.poster} label="Central screen recording" />
-            </ViewTransition>
-          </Link>
+          <div className="boot-frame">
+            <svg className="boot-trace" aria-hidden="true">
+              <rect width="100%" height="100%" rx="10" pathLength={1} />
+            </svg>
+            <Link href="/work/central" aria-label="Open the Central case study">
+              <ViewTransition name="shot-central" share="morph">
+                <Screen src={RECORDINGS.central?.teaser} poster={RECORDINGS.central?.poster} label="Central screen recording" />
+              </ViewTransition>
+            </Link>
+          </div>
           <div className="stack">Next.js · Supabase · PostgreSQL · Capacitor · Anthropic API</div>
           <Link className="cta" href="/work/central">Read the case study →</Link>
         </section>

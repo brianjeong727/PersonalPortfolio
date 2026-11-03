@@ -201,6 +201,51 @@ p { margin: 0; }
 ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.4s; }
 
 /* =========================================================================
+   Landing sequence ("cold boot"). Runs once on first load of the home page.
+   html[data-boot] is set by an inline script before first paint and removed
+   by BootName when the sequence ends. Without it, nothing here applies.
+   ========================================================================= */
+.boot-name span { position: relative; }
+.boot-frame { position: relative; }
+.boot-trace { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 1; opacity: 0; }
+.boot-trace rect { x: 0.5px; y: 0.5px; width: calc(100% - 1px); height: calc(100% - 1px); fill: none; stroke: var(--accent); stroke-width: 1.2; stroke-dasharray: 1; stroke-dashoffset: 1; }
+
+@keyframes boot-rise { from { opacity: 0; transform: translateY(10px); } }
+@keyframes boot-fade { from { opacity: 0; } }
+@keyframes boot-show { from { color: transparent; } to { color: var(--fg); } }
+@keyframes boot-glyph { from, to { opacity: 1; } }
+@keyframes boot-rail { from { transform: scaleY(0); } }
+@keyframes boot-draw { 0% { opacity: 1; stroke-dashoffset: 1; } 70% { opacity: 1; stroke-dashoffset: 0; } 100% { opacity: 0; stroke-dashoffset: 0; } }
+
+/* Name: each letter shows a shuffling glyph, then resolves into the serif. Glyphs sit over the real letters, so nothing shifts. */
+html[data-boot] .boot-name span { animation: boot-show 0.01s linear both; animation-delay: calc(150ms + var(--i) * 60ms); }
+html[data-boot] .boot-name span::after {
+  content: attr(data-g); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--mono); font-size: 0.56em; color: var(--accent); opacity: 0;
+  animation: boot-glyph calc(150ms + var(--i) * 60ms) linear;
+}
+
+/* Sidebar assembles under the name */
+html[data-boot] .side .role { animation: boot-rise 0.6s var(--ease) 650ms both; }
+html[data-boot] .side .bio { animation: boot-rise 0.6s var(--ease) 760ms both; }
+html[data-boot] .index::before { transform-origin: top; animation: boot-rail 0.7s var(--ease) 820ms both; }
+html[data-boot] .index a { animation: boot-rise 0.5s var(--ease) both; }
+html[data-boot] .index a:nth-of-type(1) { animation-delay: 900ms; }
+html[data-boot] .index a:nth-of-type(2) { animation-delay: 990ms; }
+html[data-boot] .index a:nth-of-type(3) { animation-delay: 1080ms; }
+html[data-boot] .index a:nth-of-type(4) { animation-delay: 1170ms; }
+html[data-boot] .side .links { animation: boot-fade 0.6s ease 1500ms both; }
+
+/* First project: header, then the screen's frame traces itself and the recording powers on */
+html[data-boot] .entry:first-child .head { animation: boot-rise 0.6s var(--ease) 300ms both; }
+html[data-boot] .entry:first-child .line { animation: boot-rise 0.6s var(--ease) 420ms both; }
+html[data-boot] .boot-trace { opacity: 1; }
+html[data-boot] .boot-trace rect { animation: boot-draw 1.3s cubic-bezier(0.6, 0, 0.2, 1) 560ms both; }
+html[data-boot] .boot-frame > a { animation: boot-fade 0.7s ease 1350ms both; }
+html[data-boot] .entry:first-child .stack { animation: boot-fade 0.6s ease 1500ms both; }
+html[data-boot] .entry:first-child .cta { animation: boot-fade 0.6s ease 1600ms both; }
+
+/* =========================================================================
    Phone
    ========================================================================= */
 @media (max-width: 860px) {

@@ -49,8 +49,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
+      <head>
+        {/* Arm the landing sequence before first paint, on the home page only, unless the visitor prefers reduced motion. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              'if(location.pathname==="/"&&!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.setAttribute("data-boot","")',
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
