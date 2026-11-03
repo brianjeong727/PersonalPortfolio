@@ -83,15 +83,22 @@ export default function ChaeumPage() {
       <section className="section">
         <h2>What broke</h2>
         <div className="body">
-          <p className="todo">[Brian: one thing that didn&apos;t work the first time, e.g. the floor tracker firing on the wrong floor, Korean line breaks, or image weight, and how you fixed it]</p>
+          <p>
+            <b>The lobby animation could finish before anyone saw it.</b> The headline builds itself line by line
+            on load. But people often open a link in a background tab, and the animation played out there,
+            unseen, so they arrived to a page that was already still.
+          </p>
+          <p>
+            The fix gates the animation on the Page Visibility API: it starts the first time the tab is actually
+            visible, and never at all for visitors who ask for reduced motion.
+          </p>
         </div>
       </section>
 
       <section className="section">
         <h2>Results</h2>
         <div className="body">
-          <p>Shipped to the client with <b>24 portfolio pieces</b> across seven floors, replacing internal documents as the way Chaeum shows its work.</p>
-          <p className="todo">[Brian: client feedback or anything measurable since launch]</p>
+          <p>Shipped to the client with <b>24 portfolio pieces</b> across nine project floors, replacing internal documents as the way Chaeum shows its work.</p>
         </div>
       </section>
 
