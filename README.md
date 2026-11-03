@@ -2,7 +2,7 @@
 
 Portfolio for Brian Jeong, CS + Data Science at the University of Pittsburgh.
 
-**Live:** [brianjeong.dev](https://brianjeong.dev) *(custom domain — pending)*
+**Live:** [brianjeong.vercel.app](https://brianjeong.vercel.app) (deploys from `main`)
 
 ## Stack
 
