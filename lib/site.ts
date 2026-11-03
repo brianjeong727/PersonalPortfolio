@@ -20,6 +20,6 @@ export interface Recording {
 
 /** Edited demo reels live in /public/recordings. Remove an entry to show a placeholder. */
 export const RECORDINGS: Record<string, Recording | undefined> = {
-  central: { teaser: "/recordings/central-teaser.mp4", full: "/recordings/central.mp4", poster: "/recordings/central.jpg" },
+  central: { teaser: "/recordings/central-v3-teaser.mp4", full: "/recordings/central-v3.mp4", poster: "/recordings/central-v3.jpg" },
   chaeum: { teaser: "/recordings/chaeum-teaser.mp4", full: "/recordings/chaeum.mp4", poster: "/recordings/chaeum.jpg" },
 };
