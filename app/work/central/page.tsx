@@ -70,7 +70,7 @@ export default function CentralPage() {
           <div><dt>Live</dt><dd><a href="https://joincentral.app" target="_blank" rel="noopener noreferrer">joincentral.app ↗</a></dd></div>
         </dl>
         <ViewTransition name="shot-central" share="morph">
-          <Screen src={RECORDINGS.central} label="Central screen recording" wide still />
+          <Screen src={RECORDINGS.central?.full} poster={RECORDINGS.central?.poster} label="Central demo reel" wide still controls />
         </ViewTransition>
       </header>
 

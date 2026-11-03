@@ -16,7 +16,7 @@ const PANELS: Panel[] = [
   { node: <ChaeumTower />, caption: "fig. the site as a building" },
   { node: <ChaeumCode />, caption: "real code · floor tracking" },
   { node: <ChaeumPipeline />, caption: "fig. build-time image pipeline" },
-  { node: <Screen src={RECORDINGS.chaeum} label="Bilingual type system close-up" still />, caption: "KR / ENG type system" },
+  { node: <Screen src={RECORDINGS.chaeum?.teaser} poster={RECORDINGS.chaeum?.poster} label="Bilingual type system close-up" still />, caption: "KR / ENG type system" },
 ];
 
 const STEPS: Step[] = [
@@ -64,7 +64,7 @@ export default function ChaeumPage() {
           <div><dt>Live</dt><dd><a href="https://chaeum-j-com.vercel.app" target="_blank" rel="noopener noreferrer">chaeum-j-com.vercel.app ↗</a></dd></div>
         </dl>
         <ViewTransition name="shot-chaeum" share="morph">
-          <Screen src={RECORDINGS.chaeum} label="Chaeum screen recording" wide still />
+          <Screen src={RECORDINGS.chaeum?.full} poster={RECORDINGS.chaeum?.poster} label="Chaeum demo reel" wide still controls />
         </ViewTransition>
       </header>
 

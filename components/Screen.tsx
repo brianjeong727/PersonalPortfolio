@@ -10,9 +10,11 @@ interface ScreenProps {
   wide?: boolean;
   /** Skip the scale-in when it scrolls into view (case-study headers). */
   still?: boolean;
+  /** Show playback controls, for long reels people may want to scrub. */
+  controls?: boolean;
 }
 
-export default function Screen({ src, poster, label, wide, still }: ScreenProps) {
+export default function Screen({ src, poster, label, wide, still, controls }: ScreenProps) {
   const ref = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [on, setOn] = useState(false);
@@ -39,7 +41,7 @@ export default function Screen({ src, poster, label, wide, still }: ScreenProps)
   return (
     <div ref={ref} className={cls}>
       {src ? (
-        <video ref={video} src={src} poster={poster} muted loop playsInline preload="metadata" aria-label={label} />
+        <video ref={video} src={src} poster={poster} muted loop playsInline controls={controls} preload="metadata" aria-label={label} />
       ) : (
         <>
           <div className="bar" aria-hidden="true"><i /><i /><i /></div>
