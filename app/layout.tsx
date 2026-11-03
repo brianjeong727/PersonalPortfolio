@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 
-const hanken = Hanken_Grotesk({
+const newsreader = Newsreader({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-hanken",
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
   display: "swap",
 });
 
-const instrumentSerif = Instrument_Serif({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  variable: "--font-instrument",
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -24,14 +24,21 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
 export const metadata: Metadata = {
-  title: "Brian Jeong",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Brian Jeong · Software Engineer",
+    template: "%s · Brian Jeong",
+  },
   description:
-    "Brian Jeong — CS + Data Science at Pitt. I solve problems for the communities I belong to, and I build the whole thing. Step into the work.",
+    "Brian Jeong, software engineer. Full-stack, backend, and ML Ops work, with the architecture, code, and decisions behind each project.",
   openGraph: {
-    title: "Brian Jeong",
-    description:
-      "Brian Jeong — CS + Data Science at Pitt. I solve problems for the communities I belong to, and I build the whole thing.",
+    title: "Brian Jeong · Software Engineer",
+    description: "Full-stack, backend, and ML Ops work, with the architecture and decisions behind it.",
     type: "website",
   },
 };
@@ -42,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${hanken.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
+      className={`${newsreader.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body>{children}</body>
     </html>

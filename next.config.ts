@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    // Lets <ViewTransition> morph a project's screenshot into its case-study header.
+    viewTransition: true,
+  },
 };
 
 export default nextConfig;
