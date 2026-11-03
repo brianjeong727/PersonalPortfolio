@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Software engineering internship on PNC's ML Ops team: production scoring pipelines on AWS and Spark.",
 };
 
-// Kept to résumé-level detail: no internal system names, data, or code.
+// Described at the level of approach only: no internal system names, people, data, or code.
 const CARDS = [
   {
     problem: "A home-equity marketing model existed only as a template, with no way to score customers in production.",
@@ -77,9 +77,37 @@ export default function PncPage() {
       </section>
 
       <section className="section">
+        <h2>One migration, up close</h2>
+        <div className="body">
+          <p>
+            The home-equity model was a notebook-style script: config from a YAML file, features computed in the
+            same process, two models scored together, and Spark writing straight to Hive. The team&apos;s production
+            template expects something different: a class with a run and a save step, configuration from
+            environment variables, features read from partitioned parquet, and plain pandas with no Spark session.
+          </p>
+          <p>
+            Before writing anything I mapped the gap line by line, then made a call on each mismatch. Each of the
+            three model artifacts got its own environment variable instead of being bundled into one folder.
+            The Hive write went away, because the team downstream registers the landing-zone output themselves.
+            The performance check and summary tables stayed out of the scoring path, since they&apos;re monitoring,
+            not scoring. And the models already carry their own feature lists, so nothing is hardcoded.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
         <h2>What I learned</h2>
         <div className="body">
-          <p className="todo">[Brian: one or two lessons about running ML in production, e.g. why partitioning beat more hardware]</p>
+          <p>
+            <b>The Python was the easy part.</b> The hard questions were ones the code couldn&apos;t answer. Does the
+            feature pipeline always finish writing before inference starts? Do downstream readers depend on the
+            old partition scheme? Are two date fields the same thing, or only usually the same?
+          </p>
+          <p>
+            So I learned to write those assumptions down where they live: a path check that fails loudly if
+            the features aren&apos;t there, and docstrings that flag each decision point for review. I learned to
+            bring them to my mentor as specific questions, not as a vague sense that something might be off.
+          </p>
         </div>
       </section>
 
