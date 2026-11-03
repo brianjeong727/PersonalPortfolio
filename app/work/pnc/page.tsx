@@ -5,30 +5,35 @@ import { PncPipeline } from "@/components/figures";
 
 export const metadata: Metadata = {
   title: "PNC",
-  description: "Software engineering internship on PNC's ML Ops team: production scoring pipelines on AWS and Spark.",
+  description: "Software engineering internship on PNC's ML Ops team: production scoring pipelines, release ownership, and an on-prem-to-AWS design.",
 };
 
 // Described at the level of approach only: no internal system names, people, data, or code.
 const CARDS = [
   {
-    problem: "A home-equity marketing model existed only as a template, with no way to score customers in production.",
-    did: "Built the production inference pipeline on AWS that turns the template into a scheduled, live scoring job.",
-    result: "The model now scores in production.",
+    problem: "An unsecured-loan marketing model existed only as raw data-science code, with no production path.",
+    did: "Migrated feature engineering and inference for its 2 sub-models into the team's production PySpark template, on a shared pipeline.",
+    result: "16.5M+ records scored.",
   },
   {
-    problem: "A debit card fraud model's PySpark job spent most of its time on multi-table joins.",
-    did: "Repartitioned the joins and tuned chunk sizes so the work spread evenly across the cluster.",
-    result: "Runtime cut by 60%.",
+    problem: "Team turnover left that model's release without an owner, mid-cycle and ahead of a hard code freeze.",
+    did: "Took sole ownership and drove it through UAT development, QA testing, and production.",
+    result: "Shipped in the August production release.",
   },
   {
-    problem: "A Tier 1 XGBoost fraud model has to score every customer each cycle on on-prem Spark.",
-    did: "Operated its batch inference runs end to end.",
-    result: "9M+ records scored per cycle.",
+    problem: "Production alerts for a debit-dispute abuse model didn't separate the riskiest customers from the rest.",
+    did: "Refactored the alerting and added a 90-day approved-dispute feature to rank flagged customers.",
+    result: "Top 2,500 ranked; top 100 escalated by financial exposure.",
   },
   {
-    problem: "Two models produced nulls and training/serving mismatches from loosely defined data.",
-    did: "Defined PySpark schemas for their customer-level features and outputs.",
-    result: "Null and consistency issues resolved for both models.",
+    problem: "Batch inference still ran on-prem.",
+    did: "Designed the target-state AWS architecture for moving it to the cloud, with DataSync, EMR, and SageMaker.",
+    result: "A target-state design for on-prem-to-cloud batch inference.",
+  },
+  {
+    problem: "An internal support team kept fielding the same recurring ticket types.",
+    did: "Shipped a Copilot Studio agent that resolves FAQ tickets and escalates edge cases.",
+    result: "Every ticket's category, volume, and resolution logged to SharePoint.",
   },
 ];
 
@@ -43,9 +48,9 @@ export default function PncPage() {
         <p className="line">Software engineering intern on the Machine Learning Operations team.</p>
         <dl className="facts">
           <div><dt>Role</dt><dd>SWE Intern, ML Ops</dd></div>
-          <div><dt>Timeline</dt><dd>Jun 2026 – now</dd></div>
+          <div><dt>Timeline</dt><dd>Jun – Aug 2026</dd></div>
           <div><dt>Where</dt><dd>Pittsburgh, PA</dd></div>
-          <div><dt>Stack</dt><dd>PySpark, AWS, XGBoost</dd></div>
+          <div><dt>Stack</dt><dd>PySpark, AWS, Python</dd></div>
         </dl>
       </header>
 
@@ -80,10 +85,10 @@ export default function PncPage() {
         <h2>One migration, up close</h2>
         <div className="body">
           <p>
-            The home-equity model was a notebook-style script: config from a YAML file, features computed in the
+            The unsecured-loan model was a notebook-style script: config from a YAML file, features computed in the
             same process, two models scored together, and Spark writing straight to Hive. The team&apos;s production
             template expects something different: a class with a run and a save step, configuration from
-            environment variables, features read from partitioned parquet, and plain pandas with no Spark session.
+            environment variables, and features read from partitioned parquet.
           </p>
           <p>
             Before writing anything I mapped the gap line by line, then made a call on each mismatch. Each of the
@@ -99,7 +104,7 @@ export default function PncPage() {
         <h2>What I learned</h2>
         <div className="body">
           <p>
-            <b>The Python was the easy part.</b> The hard questions were ones the code couldn&apos;t answer. Does the
+            <b>The Python was the easy part.</b>{" "}The hard questions were ones the code couldn&apos;t answer. Does the
             feature pipeline always finish writing before inference starts? Do downstream readers depend on the
             old partition scheme? Are two date fields the same thing, or only usually the same?
           </p>

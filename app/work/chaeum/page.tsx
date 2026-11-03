@@ -84,7 +84,7 @@ export default function ChaeumPage() {
         <h2>What broke</h2>
         <div className="body">
           <p>
-            <b>The lobby animation could finish before anyone saw it.</b> The headline builds itself line by line
+            <b>The lobby animation could finish before anyone saw it.</b>{" "}The headline builds itself line by line
             on load. But people often open a link in a background tab, and the animation played out there,
             unseen, so they arrived to a page that was already still.
           </p>

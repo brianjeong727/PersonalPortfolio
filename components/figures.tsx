@@ -146,7 +146,7 @@ export function PncPipeline() {
       <text className="s" x="174" y="124">partitioned joins</text>
       <rect x="330" y="80" width="130" height="60" rx="8" />
       <text x="344" y="106">Batch scoring</text>
-      <text className="s" x="344" y="124">XGBoost · 9M+ rows</text>
+      <text className="s" x="344" y="124">16.5M+ rows</text>
       <rect x="500" y="80" width="130" height="60" rx="8" />
       <text x="514" y="106">Output tables</text>
       <text className="s" x="514" y="124">typed schema</text>

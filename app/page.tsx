@@ -74,15 +74,15 @@ export default function Home() {
           <div className="head">
             <span className="num">03</span>
             <h2>PNC</h2>
-            <span className="badge">SWE Intern, ML Ops · 2026</span>
+            <span className="badge">SWE Intern, ML Ops · Summer 2026</span>
           </div>
           <p className="line">
-            Production scoring pipelines for fraud and marketing models, on AWS and Spark.
+            Production pipelines for marketing and dispute-abuse models, plus a plan to move batch inference to AWS.
           </p>
           <div className="figure">
             <PncPipeline />
           </div>
-          <div className="stack">PySpark · AWS · XGBoost · Python</div>
+          <div className="stack">PySpark · AWS · Python · Copilot Studio</div>
           <Link className="cta" href="/work/pnc">See what I worked on →</Link>
         </section>
 
@@ -93,9 +93,11 @@ export default function Home() {
             <span className="badge">In progress</span>
           </div>
           <p className="line">
-            Owning the engineering side of a research project in my lab at Pitt. Write-up to come as the work
-            takes shape.
+            Turning a clinical guideline for Alzheimer&rsquo;s evaluation into a multi-agent LLM workflow, tested on
+            ADNI patient data.
           </p>
+          <div className="stack">LangGraph · Python · scikit-learn · XGBoost</div>
+          <Link className="cta" href="/work/pittnail">See where it stands →</Link>
         </section>
       </main>
     </div>

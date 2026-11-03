@@ -1,8 +1,8 @@
 export const PROFILE = {
   name: "Brian Jeong",
   role: "Software engineer, Pittsburgh",
-  bio: "Studying CS and Data Science at Pitt. Interning on PNC's ML Ops team. I like owning a system from the schema to the screen.",
-  email: "bjj46@pitt.edu",
+  bio: "Studying CS and Data Science at Pitt. Building multi-agent LLM systems in Pitt's Clinical NLP & AI lab; previously ML Ops at PNC. I like owning a system from the schema to the screen.",
+  email: "brianjeong13@gmail.com",
   links: [
     { label: "GitHub", href: "https://github.com/brianjeong727" },
     { label: "LinkedIn", href: "https://linkedin.com/in/brianjeong727" },

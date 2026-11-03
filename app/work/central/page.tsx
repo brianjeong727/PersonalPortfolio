@@ -113,7 +113,7 @@ export default function CentralPage() {
         <div className="body">
           <p><b>200+ people</b> use Central every week across Pitt and CMU, and <b>4 ministries</b> run on it as separate tenants.</p>
           <p>
-            Behind that: <b>395 merged pull requests</b> since March 2026, <b>121 Playwright end-to-end specs</b> guarding the
+            Behind that: <b>395 merged pull requests</b> since March 2026, <b>121 Playwright end-to-end specs</b>{" "}guarding the
             flows people use every week, and one codebase that ships to the web, iOS, and Android.
           </p>
         </div>
