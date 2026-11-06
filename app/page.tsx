@@ -38,7 +38,7 @@ export default function Home() {
           <div className="head">
             <span className="num">01</span>
             <h2>Central</h2>
-            <span className="badge">Live · 200+ weekly users</span>
+            <span className="badge">Live · used weekly</span>
           </div>
           <p className="line">
             The operating system for campus ministries at Pitt and CMU. One app replaced Messenger, Drive, and

@@ -14,7 +14,7 @@ import { RECORDINGS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Central",
-  description: "Case study: a multi-tenant church operating system used weekly by 200+ people.",
+  description: "Case study: a multi-tenant church operating system used weekly at Pitt and CMU.",
 };
 
 const PANELS: Panel[] = [
@@ -66,7 +66,7 @@ export default function CentralPage() {
         <dl className="facts">
           <div><dt>Role</dt><dd>Solo designer and engineer</dd></div>
           <div><dt>Timeline</dt><dd>Aug 2025 – now</dd></div>
-          <div><dt>Users</dt><dd>200+ weekly, Pitt and CMU</dd></div>
+          <div><dt>Users</dt><dd>Weekly, Pitt and CMU</dd></div>
           <div><dt>Live</dt><dd><a href="https://joincentral.app" target="_blank" rel="noopener noreferrer">joincentral.app ↗</a></dd></div>
         </dl>
         <ViewTransition name="shot-central" share="morph">
@@ -111,7 +111,7 @@ export default function CentralPage() {
       <section className="section">
         <h2>Results</h2>
         <div className="body">
-          <p><b>200+ people</b> use Central every week across Pitt and CMU, and <b>4 ministries</b> run on it as separate tenants.</p>
+          <p>People use Central every week across Pitt and CMU, and <b>4 ministries</b> run on it as separate tenants.</p>
           <p>
             Behind that: <b>395 merged pull requests</b> since March 2026, <b>121 Playwright end-to-end specs</b>{" "}guarding the
             flows people use every week, and one codebase that ships to the web, iOS, and Android.
